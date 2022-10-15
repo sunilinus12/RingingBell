@@ -1,5 +1,7 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {MotiView} from '@motify/components';
+import {Easing} from 'react-native-reanimated';
 
 export default function App() {
   return (
@@ -8,11 +10,39 @@ export default function App() {
         style={{
           width: 80,
           height: 80,
-          backgroundColor: '#4C28BA',
+          backgroundColor: '#6E01EF',
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: 50,
         }}>
+        {Array(3)
+          .fill('')
+          .map((item, key) => {
+            return (
+              <MotiView
+                key={key}
+                transition={{
+                  duration: 2000,
+                  type: 'timing',
+                  easing: Easing.out(Easing.ease),
+                  loop: true,
+                  delay: key * 400,
+                }}
+                style={[
+                  StyleSheet.absoluteFillObject,
+                  {
+                    width: 80,
+                    height: 80,
+                    backgroundColor: '#6E01EF',
+
+                    borderRadius: 50,
+                  },
+                ]}
+                from={{opacity: 1, scale: 1}}
+                animate={{opacity: 0, scale: 4}}
+              />
+            );
+          })}
         <Image
           source={require('./assets/phone-call.png')}
           style={{
