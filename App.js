@@ -26,7 +26,8 @@ export default function App() {
                   type: 'timing',
                   easing: Easing.out(Easing.ease),
                   loop: true,
-                  delay: key * 400,
+                  delay: key * 200,
+                  repeatReverse: false,
                 }}
                 style={[
                   StyleSheet.absoluteFillObject,
@@ -38,7 +39,7 @@ export default function App() {
                     borderRadius: 50,
                   },
                 ]}
-                from={{opacity: 1, scale: 1}}
+                from={{opacity: 0.7, scale: 1}}
                 animate={{opacity: 0, scale: 4}}
               />
             );
