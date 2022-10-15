@@ -6,15 +6,19 @@ export default function App() {
     <View style={styles.center}>
       <View
         style={{
-          width: 100,
-          height: 100,
-          backgroundColor: 'black',
+          width: 80,
+          height: 80,
+          backgroundColor: '#4C28BA',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 50,
         }}>
         <Image
           source={require('./assets/phone-call.png')}
           style={{
-            width: '100%',
-            height: '100%',
+            width: '35%',
+            height: '35%',
+            resizeMode: 'contain',
           }}
         />
       </View>
